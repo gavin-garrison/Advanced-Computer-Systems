@@ -1,0 +1,5 @@
+case,cache_miss_%,dtlb_mpki
+local,0.0,0.0
+random,0.0,0.0
+tlb_span16,0.0,0.0
+tlb_span16_huge,0.0,0.0

@@ -1,0 +1,3 @@
+ws_bytes,stride_elems,page_span,huge,repetition,sec,GBps_effective
+1073741824,1,1,0,0,0.406167,26.435993
+1073741824,1,1,0,1,0.477807,22.472270

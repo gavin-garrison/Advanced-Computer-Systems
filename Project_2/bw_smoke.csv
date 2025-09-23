@@ -1,0 +1,3 @@
+bytes,threads,stride_B,rw,pattern,repetition,GBps,lat_est_ns
+268435456,1,64,100R,seq,0,0.000000,inf
+268435456,1,64,100R,seq,1,0.000000,inf
