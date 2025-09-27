@@ -1,5 +1,0 @@
-case,cache_miss_%,LLC_miss_%,dTLB_miss_%
-local,,,
-random,,,
-tlb_span16,,,
-tlb_span16_huge,,,
