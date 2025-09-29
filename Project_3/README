@@ -1,0 +1,170 @@
+1. Zero-Queue Baselines (QD = 1)
+
+Figure/Table: zero_queue_pretty.csv
+
+We measured single-request (QD = 1) latency for 4 KiB random and 128 KiB sequential patterns for both reads and writes. This baseline captures the intrinsic device service time without queuing effects, serving as the anchor point for later throughput–latency curves. Latencies are reported as averages and percentiles (p95/p99).
+
+Reasoning:
+At QD = 1, throughput is simply 1 / latency (Little’s Law). Random 4 KiB ops exhibit higher latency due to controller lookup and FTL indirections, while sequential 128 KiB ops benefit from internal prefetch and larger transfer sizes.
+
+Shortcomings:
+
+Runs used buffered I/O due to WSL limitations; p95/p99 may reflect host cache behavior.
+
+The test target is a file, not a raw block device. True device service times may differ slightly.
+
+2. Block-Size Sweep (Random & Sequential)
+
+Figures:
+
+Random: bs_sweep_rand.png, bs_sweep_rand_latency.png
+
+Sequential: bs_sweep_seq.png, bs_sweep_seq_latency.png
+
+We swept block sizes from 4 KiB to 256 KiB for both random and sequential access patterns.
+
+Reasoning:
+
+Small blocks are IOPS-dominated; throughput rises roughly linearly with block size until controller and interface limits dominate.
+
+Sequential reads exhibit clear scaling up to 128 KiB where interface bandwidth saturates.
+
+Latency curves show per-operation service time increasing with block size, as larger transfers occupy the device longer.
+
+Random latency grows faster with block size because each op is independent and lacks prefetching benefits.
+
+Shortcomings:
+
+Buffered path may overstate small-block reads due to page cache hits.
+
+High block sizes (256 KiB) may not reach full steady state with short runtime.
+
+3. Read/Write Mix Sweep
+
+Figure: rw_mix.png
+
+We fixed block size (4 KiB, random) and queue depth, then varied the read/write ratio: 100 % R, 100 % W, 70/30, 50/50.
+
+Reasoning:
+
+Writes show lower throughput and higher latency than reads, reflecting flash program operations, write amplification, and flush behavior.
+
+Mixed workloads reduce effective throughput compared to pure reads, as writes interfere with parallelism and may trigger garbage collection.
+
+Shortcomings:
+
+Host page cache may blur distinctions between reads and writes at low QD.
+
+No TRIM/discard preconditioning — longer writes might behave differently in steady state.
+
+4. Queue-Depth / Parallelism Sweep (Trade-off Curve)
+
+Figures:
+
+4 KiB random: qd_tradeoff_4k_rand_err.png
+
+128 KiB sequential: qd_tradeoff_128k_seq_err.png
+
+We varied queue depth and plotted throughput vs average latency, identifying the classic saturation knee.
+
+Reasoning:
+
+Initially, increasing QD improves throughput while latency remains near the service-time baseline.
+
+Past the knee, further QD mostly increases queuing delay with little extra throughput — a textbook Little’s Law trade-off.
+
+For sequential large-block workloads, the knee occurs near QD ≈ 1–2, since each op already transfers a lot of data.
+
+For small-block random, the knee appears at moderate QD (≈ 8–16), where device parallelism is saturated.
+
+Shortcomings:
+
+Error bars are wide at some QD points due to run-to-run variability in WSL buffered mode.
+
+Lack of direct I/O may slightly shift the knee location.
+
+5. Tail-Latency Characterization
+
+Figure: tail_latency.png
+
+We examined p50/p95/p99/p99.9 latency for a representative 4 KiB random workload at mid-QD and near the knee.
+
+Reasoning:
+
+Tail latencies expand significantly as QD rises, reflecting queuing delays and background SSD activities.
+
+These long tails are critical for SLA discussions; even if average latency is acceptable, p99 can be 10–100× larger.
+
+Shortcomings:
+
+Limited percentiles available under buffered mode; device-level tails might differ slightly.
+
+No explicit thermal throttling observed, but not instrumented.
+
+6. Working-Set / LBA-Range Effects
+
+Figure: working_set.png
+
+We compared small (256 MiB) vs large (8 GiB) working sets at fixed QD and 4 KiB random writes.
+
+Reasoning:
+
+Larger working sets reduce effective caching, controller prefetching, and locality, leading to higher latency and lower throughput.
+
+This mirrors real-world scenarios where workloads exceed fast SLC cache or DRAM buffers.
+
+Shortcomings:
+
+The device’s exact SLC cache behavior is unknown; results are qualitative.
+
+Longer runs might show more pronounced steady-state degradation.
+
+7. Burst → Steady-State Behavior
+
+Figure: slc_bw.png
+
+We ran a 15-minute sustained 128 KiB QD32 write, logging bandwidth over time.
+
+Reasoning:
+
+Initial high bandwidth corresponds to SLC-cached writes.
+
+Over time, throughput dips as the SSD transitions to TLC steady state, possibly compounded by thermal effects.
+
+The 5 s median trace highlights long-term trends over short spikes.
+
+Shortcomings:
+
+No temperature logging; cannot separate thermal throttling vs cache exhaustion definitively.
+
+File-based writes may interact with host caching layers.
+
+8. Data Compressibility Effects
+
+Figure: compressibility.png
+
+We compared incompressible vs 50 % compressible data payloads.
+
+Reasoning:
+
+Some consumer SSDs compress data before writing, improving apparent throughput for compressible data.
+
+Here, differences are modest, likely because buffered I/O masks controller-level compression benefits.
+
+Shortcomings:
+
+No direct O_DIRECT, so compression benefits may be understated.
+
+Real differences might appear more clearly on native Linux raw device testing.
+
+Synthesis & Key Takeaways
+
+Throughput–latency behavior closely follows queuing theory: increasing concurrency improves throughput until the saturation knee, after which latency balloons.
+
+Block size and access pattern strongly shape whether performance is IOPS- or bandwidth-limited.
+
+Writes and large working sets reveal controller behavior such as caching and GC.
+
+Tail latencies are crucial for understanding worst-case SLA behavior.
+
+Results are somewhat affected by WSL’s buffered I/O path and file-backed testing, but the qualitative patterns remain correct.
