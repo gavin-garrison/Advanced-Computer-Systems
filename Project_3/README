@@ -1,3 +1,43 @@
+**How to run**
+
+```bash
+# From WSL
+git clone <your_repo_url>.git ssd-bench
+cd ssd-bench
+
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+
+# Optional: choose a different target file
+# export SSD_TARGET=/path/to/bigfile.img
+
+chmod +x run_bench.sh
+./run_bench.sh            # generates raw results in out/
+python plot_all.py        # produces figures + zero_queue_pretty.csv into out/
+
+#	Experiment	Purpose	Figures
+1	Zero-queue baselines (QD=1)	Measure minimum avg and p95/p99 latency for 4 KiB random and 128 KiB sequential R/W.	zero_queue_pretty.csv
+2	Block-size sweep	Show impact of block size and pattern (random vs sequential) on latency, throughput, and IOPS.	bs_sweep_rand.png, bs_sweep_rand_latency.png, bs_sweep_seq.png, bs_sweep_seq_latency.png
+3	Read/Write mix	Compare throughput and latency under 100R, 100W, 70/30, 50/50 mixes.	rw_mix.png
+4	Queue-depth sweep	Plot throughput vs latency curve, identify saturation knee, relate to Little’s Law.	qd_tradeoff_4k_rand_err.png, qd_tradeoff_128k_seq_err.png
+5	Tail latency characterization	p50/p95/p99/p99.9 at mid-QD and near knee, to illustrate queuing effects.	tail_latency.png
+6	Working-set size	Compare small (256 MiB) vs large (8 GiB) LBA windows to reveal SLC cache / thermal effects.	working_set.png
+7	Burst → steady-state writes	Observe SLC cache exhaustion and throttling over time.	slc_bw.png
+8	Compressibility	Show controller behavior under incompressible vs 50 % compressible payloads.	compressibility.png
+FIO Test Parameters
+
+For the block size sweep, I use --bs=4k,16k,32k,64k,128k,256k. This range covers common block sizes and shows the transition from IOPS-dominated behavior at smaller sizes (≤64 KiB) to bandwidth-dominated behavior at larger sizes (≥128 KiB).
+
+For queue depth, I vary --iodepth=1→2→4→8→16→32→64→128. This controls concurrency, and increasing the queue depth improves throughput until reaching a saturation knee, after which latency rises sharply with little additional throughput.
+
+For target size, I use --size=8GiB in most tests. This is large enough to bypass the SSD’s DRAM and SLC cache, ensuring that the controller and flash are fully exercised rather than just the fast cache layer.
+
+For duration, I use --runtime=15–30 --time_based=1. Running each workload for a fixed amount of time provides stable statistics for IOPS, bandwidth, and latency percentiles without relying on fixed byte counts.
+
+For the I/O engine, I use --ioengine=libaio for parallel workloads and --ioengine=psync for single-threaded baselines. This allows me to evaluate both high-concurrency and fundamental single-stream behavior.
+
+For buffered I/O, I use --buffered=1 because WSL does not reliably support O_DIRECT on all filesystems. Using buffered mode consistently with a large dedicated file minimizes page cache interference while ensuring compatibility.
+
 1. Zero-Queue Baselines (QD = 1)
 
 Figure/Table: zero_queue_pretty.csv
