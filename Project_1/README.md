@@ -18,7 +18,7 @@ All raw/cleaned CSVs, scripts, and figures are in this folder for full reproduci
 ## Contents
 ## Rebuild or regenerate plots
 
-```bash
+
 # from Project_1/
 python3 -m pip install --user pandas numpy matplotlib
 
