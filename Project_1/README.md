@@ -37,3 +37,34 @@ python3 plot_tail.py       results_clean.csv                    # writes tail_*.
 
 
 
+
+## Figures
+
+
+## Figures
+
+true{f}](./align_saxpy_f32_AVX2.png)
+true{f}](./alignment_all.png)
+true{f}](./locality_saxpy_f32_AVX2.png)
+true{f}](./locality_saxpy_f32_AVX2_gibps.png)
+true{f}](./locality_saxpy_f32_annotated.png)
+true{f}](./locality_saxpy_f32_simd.png)
+true{f}](./locality_saxpy_f32_simd_cpe.png)
+true{f}](./locality_saxpy_f32_simd_gibps.png)
+true{f}](./roofline_saxpy_f32_AVX2.png)
+true{f}](./roofline_saxpy_f32_simd.png)
+true{f}](./speedup_dot_f32.png)
+true{f}](./speedup_dot_f64.png)
+true{f}](./speedup_f32.png)
+true{f}](./speedup_f64.png)
+true{f}](./speedup_mul_f32.png)
+true{f}](./speedup_mul_f64.png)
+true{f}](./speedup_saxpy_f32.png)
+true{f}](./speedup_saxpy_f64.png)
+true{f}](./speedup_stencil_f32.png)
+true{f}](./speedup_stencil_f64.png)
+true{f}](./stride_all.png)
+true{f}](./stride_dot_f32_AVX2.png)
+true{f}](./stride_dot_f32_N1048576.png)
+true{f}](./tail_all.png)
+true{f}](./tail_mul_f64_AUTO.png)
