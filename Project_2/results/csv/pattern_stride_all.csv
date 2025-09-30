@@ -1,0 +1,5 @@
+pattern,stride_B,metric,value,run_id
+seq,64,bandwidth_GBs,35.2,1
+random,64,bandwidth_GBs,12.4,1
+seq,64,latency_ns,5.1,1
+random,64,latency_ns,18.8,1

@@ -1,0 +1,5 @@
+level,read_ns,write_ns,read_cycles,write_cycles
+L1,0.9,1.2,2.16,2.88
+L2,3.6,4.1,8.64,9.84
+L3,12.1,,29.04,
+DRAM,85.0,,204.0,

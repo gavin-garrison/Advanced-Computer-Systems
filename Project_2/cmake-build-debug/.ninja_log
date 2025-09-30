@@ -1,0 +1,17 @@
+# ninja log v6
+73	2081	7801711800197756	CMakeFiles/memlab.dir/main.cpp.obj	a6751a80cb8e4f83
+106	2736	7801711800527795	CMakeFiles/memlab.dir/kernel_bench.cpp.obj	880ba7741f2a785d
+98	3280	7801711800447784	CMakeFiles/memlab.dir/bandwidth_bench.cpp.obj	f04903d3a7cc3eb1
+91	3522	7801711800377798	CMakeFiles/memlab.dir/latency_bench.cpp.obj	a00b23e6adfd9bf0
+19	4667	7801715555720258	CMakeFiles/memlab.dir/main.cpp.obj	a6751a80cb8e4f83
+69	6561	7801715556225435	CMakeFiles/memlab.dir/kernel_bench.cpp.obj	880ba7741f2a785d
+58	7713	7801715556111470	CMakeFiles/memlab.dir/bandwidth_bench.cpp.obj	f04903d3a7cc3eb1
+45	8751	7801715555977527	CMakeFiles/memlab.dir/latency_bench.cpp.obj	a00b23e6adfd9bf0
+33	9868	7801715555864990	CMakeFiles/memlab.dir/util.cpp.obj	eac59f4e214d1eff
+9873	10556	7801715654256032	memlab.exe	27877016c0b7e3f5
+40	7626	7801717749623403	CMakeFiles/memlab.dir/bandwidth_bench.cpp.obj	f04903d3a7cc3eb1
+7628	8165	7801717825493446	memlab.exe	27877016c0b7e3f5
+197	8947	7801761323235038	CMakeFiles/memlab.dir/bandwidth_bench.cpp.obj	f04903d3a7cc3eb1
+8948	9271	7801761410746276	memlab.exe	27877016c0b7e3f5
+34	5798	7801817803950955	CMakeFiles/memlab.dir/bandwidth_bench.cpp.obj	f04903d3a7cc3eb1
+5799	7041	7801817861600331	memlab.exe	27877016c0b7e3f5

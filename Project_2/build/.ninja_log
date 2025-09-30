@@ -1,0 +1,7 @@
+# ninja log v5
+13	1729	1758980609299262700	CMakeFiles/memlab.dir/main.cpp.o	a566535205c9f2c3
+15	1988	1758980609585237900	CMakeFiles/memlab.dir/util.cpp.o	ab6cfa63a8d7ddb8
+19	2560	1758980610220008800	CMakeFiles/memlab.dir/bandwidth_bench.cpp.o	153dfc265e886cb3
+21	2284	1758980609915607500	CMakeFiles/memlab.dir/kernel_bench.cpp.o	c394b14955a43035
+17	2651	1758980610317667700	CMakeFiles/memlab.dir/latency_bench.cpp.o	b3bfe0d39ae0455b
+2657	2849	1758980610542278200	memlab	2c88d614e958c72b

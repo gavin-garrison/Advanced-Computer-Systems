@@ -1,0 +1,5 @@
+threads,loaded_latency_ns,throughput_GBs,run_id
+1,75,12.3,1
+2,90,18.7,1
+4,130,23.1,1
+8,210,24.0,1

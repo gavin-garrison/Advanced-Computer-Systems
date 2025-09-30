@@ -1,0 +1,8 @@
+# started on Sun Sep 21 14:37:09 2025
+
+3475.21,msec,task-clock,3475209500,100.00,1.059,CPUs utilized
+9620983247,,cycles,3475290700,100.00,2.768,GHz
+3912585269,,instructions,3475290700,100.00,0.41,insn per cycle
+566496536,,cache-references,3475290700,100.00,163.011,M/sec
+419655863,,cache-misses,3475290700,100.00,74.08,of all cache refs
+2784110,,dTLB-load-misses,3475290700,100.00,,

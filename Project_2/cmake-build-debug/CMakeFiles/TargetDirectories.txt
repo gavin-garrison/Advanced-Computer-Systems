@@ -1,0 +1,3 @@
+C:/Users/Gavin Garrison/CLionProjects/acs/project_2/cmake-build-debug/CMakeFiles/memlab.dir
+C:/Users/Gavin Garrison/CLionProjects/acs/project_2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Gavin Garrison/CLionProjects/acs/project_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
