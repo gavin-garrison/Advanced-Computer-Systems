@@ -89,26 +89,24 @@ print('transition candidates (bytes):', ws[jumps+1][:4])
 PY
 
 Figures
+### Kernel: IPC vs MPKI
+![IPC vs MPKI](./plots/fig_cache_ipc_vs_llc_mpki.png)
 
-### 1) Zero-queue latency vs working set
-![wss transitions](plots/fig_wss_transitions.png)
+### AMAT vs IPC
+![AMAT vs IPC](./plots/fig_amat_vs_ipc.png)
 
-### 2) Pattern × stride (latency & bandwidth)
-![pattern bandwidth](plots/fig_pattern_bandwidth.png)
-![pattern latency](plots/fig_pattern_latency.png)
+### Pattern × stride
+![Pattern bandwidth](./plots/fig_pattern_bandwidth.png)
+![Pattern latency](./plots/fig_pattern_latency.png)
 
-### 3) Read/Write mix sweep
-![rw mix](plots/fig_rw_mix.png)
+### R/W mix
+![RW mix](./plots/fig_rw_mix.png)
 
-### 4) Intensity sweep (Little’s Law)
-![intensity curve](plots/fig_intensity_curve.png)
+### Intensity sweep
+![Intensity curve](./plots/fig_intensity_curve.png)
 
-### 5) Kernel: IPC vs MPKI (cache-misses proxy on WSL)
-![ipc vs mpki](plots/fig_cache_ipc_vs_llc_mpki.png)
-
-### 6) AMAT vs IPC (qualitative)
-![amat vs ipc](plots/fig_amat_vs_ipc.png)
-
+### Working-set transitions
+![WSS transitions](./plots/fig_wss_transitions.png)
 
 System Configuration (paste your outputs)
 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
