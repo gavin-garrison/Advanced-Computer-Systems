@@ -38,8 +38,6 @@ python3 plot_tail.py       results_clean.csv                    # writes tail_*.
 
 
 
-## Figures
-
 
 ## Figures
 
