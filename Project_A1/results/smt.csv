@@ -1,0 +1,4 @@
+mode,smt,victim_cpu,interf_cpu,bytes,iters,thp,total_time_s
+VICTIM_time_s,0.182266
+INTERFERER_time_s,0.417206
+mode,smt,victim_cpu,0,interf_cpu,1,bytes,268435456,iters,150000000,thp,1,total_time_s,0.424406

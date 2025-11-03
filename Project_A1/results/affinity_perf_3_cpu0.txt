@@ -1,0 +1,6 @@
+1645515844,,cycles:u,401365100,100.00,,
+3150147589,,instructions:u,401365100,100.00,1.91,insn per cycle
+6002,,cache-misses:u,401365100,100.00,,
+<not supported>,,LLC-load-misses:u,0,100.00,,
+300030647,,branches:u,401365100,100.00,,
+3198,,branch-misses:u,401365100,100.00,0.00,of all branches

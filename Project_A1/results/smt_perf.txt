@@ -1,0 +1,6 @@
+2389462503,,cycles:u,657976100,100.00,,
+3382005501,,instructions:u,657976100,100.00,1.42,insn per cycle
+22312224,,cache-misses:u,657976100,100.00,,
+<not supported>,,LLC-load-misses:u,0,100.00,,
+305508075,,branches:u,657976100,100.00,,
+170017,,branch-misses:u,657976100,100.00,0.06,of all branches

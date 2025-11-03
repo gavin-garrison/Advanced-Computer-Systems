@@ -1,0 +1,6 @@
+1349561844,,cycles:u,915032000,100.00,,
+371221586,,instructions:u,915032000,100.00,0.28,insn per cycle
+39911393,,cache-misses:u,915032000,100.00,,
+<not supported>,,LLC-load-misses:u,0,100.00,,
+8815124,,branches:u,915032000,100.00,,
+268444,,branch-misses:u,915032000,100.00,3.05,of all branches

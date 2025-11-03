@@ -1,0 +1,6 @@
+1643755792,,cycles:u,402483900,100.00,,
+3150147585,,instructions:u,402483900,100.00,1.92,insn per cycle
+4880,,cache-misses:u,402483900,100.00,,
+<not supported>,,LLC-load-misses:u,0,100.00,,
+300030643,,branches:u,402483900,100.00,,
+3293,,branch-misses:u,402483900,100.00,0.00,of all branches

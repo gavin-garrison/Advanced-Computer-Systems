@@ -1,0 +1,7 @@
+mode,affinity,cpu,iters,time_s
+mode,affinity,cpu,-1,iters,150000000,time_s,0.403797
+mode,affinity,cpu,-1,iters,150000000,time_s,0.406888
+mode,affinity,cpu,-1,iters,150000000,time_s,0.409074
+mode,affinity,cpu,0,iters,150000000,time_s,0.402829
+mode,affinity,cpu,0,iters,150000000,time_s,0.401811
+mode,affinity,cpu,0,iters,150000000,time_s,0.400783

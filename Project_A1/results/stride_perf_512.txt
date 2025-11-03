@@ -1,0 +1,6 @@
+71340964,,cycles:u,37436800,100.00,,
+71613882,,instructions:u,37436800,100.00,1.00,insn per cycle
+2221472,,cache-misses:u,37436800,100.00,,
+<not supported>,,LLC-load-misses:u,0,100.00,,
+9500839,,branches:u,37436800,100.00,,
+2794,,branch-misses:u,37436800,100.00,0.03,of all branches

@@ -1,0 +1,14 @@
+## System Info
+Linux DESKTOP-E98UQO4 5.15.167.4-microsoft-standard-WSL2 #1 SMP Tue Nov 5 00:21:55 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+Python 3.13.5
+Architecture:                         x86_64
+CPU(s):                               8
+On-line CPU(s) list:                  0-7
+Vendor ID:                            GenuineIntel
+Model name:                           11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+Thread(s) per core:                   2
+Core(s) per socket:                   4
+Socket(s):                            1
+initrd=\initrd.img WSL_ROOT_INIT=1 panic=-1 nr_cpus=8 hv_utils.timesync_implicit=1 console=hvc0 debug pty.legacy_count=0 WSL_ENABLE_CRASH_DUMP=1
+[always] madvise never

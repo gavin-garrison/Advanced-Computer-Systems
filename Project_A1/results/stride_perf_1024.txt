@@ -1,0 +1,6 @@
+65836351,,cycles:u,37335000,100.00,,
+69516762,,instructions:u,37335000,100.00,1.06,insn per cycle
+1885771,,cache-misses:u,37335000,100.00,,
+<not supported>,,LLC-load-misses:u,0,100.00,,
+8976550,,branches:u,37335000,100.00,,
+2756,,branch-misses:u,37335000,100.00,0.03,of all branches

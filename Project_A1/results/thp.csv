@@ -1,0 +1,3 @@
+mode,thp,bytes,iters,thp_flag,time_s,GB_copied,GBps
+mode,thp,bytes,536870912,iters,8,thp_flag,1,time_s,0.304513,GB_copied,4.295,GBps,14.104
+mode,thp,bytes,536870912,iters,8,thp_flag,0,time_s,0.280019,GB_copied,4.295,GBps,15.338

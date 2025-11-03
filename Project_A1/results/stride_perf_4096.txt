@@ -1,0 +1,6 @@
+57045733,,cycles:u,34046000,100.00,,
+67944324,,instructions:u,34046000,100.00,1.19,insn per cycle
+1614370,,cache-misses:u,34046000,100.00,,
+<not supported>,,LLC-load-misses:u,0,100.00,,
+8583415,,branches:u,34046000,100.00,,
+2799,,branch-misses:u,34046000,100.00,0.03,of all branches

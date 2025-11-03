@@ -1,0 +1,6 @@
+1246474685,,cycles:u,383184400,100.00,,
+371221592,,instructions:u,383184400,100.00,0.30,insn per cycle
+37236057,,cache-misses:u,383184400,100.00,,
+<not supported>,,LLC-load-misses:u,0,100.00,,
+8815119,,branches:u,383184400,100.00,,
+265375,,branch-misses:u,383184400,100.00,3.01,of all branches

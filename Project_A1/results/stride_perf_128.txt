@@ -1,0 +1,6 @@
+108701267,,cycles:u,47248700,100.00,,
+84196595,,instructions:u,47248700,100.00,0.77,insn per cycle
+4180490,,cache-misses:u,47248700,100.00,,
+<not supported>,,LLC-load-misses:u,0,100.00,,
+12646530,,branches:u,47248700,100.00,,
+2758,,branch-misses:u,47248700,100.00,0.02,of all branches

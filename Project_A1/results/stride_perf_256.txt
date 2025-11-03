@@ -1,0 +1,6 @@
+86973703,,cycles:u,41244500,100.00,,
+75808218,,instructions:u,41244500,100.00,0.87,insn per cycle
+2893160,,cache-misses:u,41244500,100.00,,
+<not supported>,,LLC-load-misses:u,0,100.00,,
+10549419,,branches:u,41244500,100.00,,
+2750,,branch-misses:u,41244500,100.00,0.03,of all branches

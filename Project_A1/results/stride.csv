@@ -1,0 +1,9 @@
+mode,stride,bytes,strideB,time_s,ns_per_access
+mode,stride,bytes,268435456,strideB,64,time_s,0.012803,ns_per_access,3.05
+mode,stride,bytes,268435456,strideB,128,time_s,0.013690,ns_per_access,6.53
+mode,stride,bytes,268435456,strideB,256,time_s,0.008567,ns_per_access,8.17
+mode,stride,bytes,268435456,strideB,512,time_s,0.004244,ns_per_access,8.09
+mode,stride,bytes,268435456,strideB,1024,time_s,0.002228,ns_per_access,8.50
+mode,stride,bytes,268435456,strideB,2048,time_s,0.001047,ns_per_access,7.99
+mode,stride,bytes,268435456,strideB,4096,time_s,0.000808,ns_per_access,12.33
+mode,stride,bytes,268435456,strideB,8192,time_s,0.000296,ns_per_access,9.03
