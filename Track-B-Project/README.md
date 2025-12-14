@@ -1,3 +1,47 @@
+Different project than the listed options approved by Professor Zhang:
+"Rubric"/guidelines set:
+Hybrid Clock Network Design: H-Tree Backbone with Region-Adaptive Local Meshes
+
+Background & Motivation
+Clock distribution is a dominant power and timing challenge in modern multi-GHz SoCs.
+Traditional topologies-H-trees (low power, higher skew) and meshes (low skew, high power)-represent opposite extremes.
+This project explores a hybrid architecture combining an H-tree backbone with localized mesh clusters whose densities adapt to sink density or criticality, balancing skew, power, and robustness.
+This research connects to Track B's architectural modeling and performance-analysis goals by quantitatively evaluating how microarchitectural (clock topology) and physical (wire RC) parameters interact to influence timing integrity, power, and variability.
+
+Research Plan
+1. Background Research
+Review literature on H-tree, mesh, and hybrid clock topologies, including Intel's mesh designs and adaptive clocking papers (IEEE JSSC, TCAD).
+Survey open-source tools and prior analytical RC modeling methods used for clock-network simulation.
+Collect open parameters from IRDS/ITRS for 3 nm interconnect resistivity and capacitance.
+2. Modeling & Simulation
+Implement an analytical RC simulator in MATLAB/Python using Modified Nodal Analysis (MNA).
+Generate an H-tree feeding tiled regions (e.g., 4×4). Within each region, create grid meshes with tunable mesh density prp_rpr​.
+Perform transient analysis to compute sink arrival times → skew; estimate dynamic power P≈CV2fP ≈ C V² fP≈CV2f.
+Introduce Monte-Carlo PVT variation on R′, C′, and R_drv to study robustness.
+3. Analysis & Optimization
+Sweep pr∈[0,1]p_r ∈ [0, 1]pr​∈[0,1] for uniform and region-adaptive cases.
+Explore density and criticality-driven meshing policies.
+Plot Pareto fronts of (skew vs power) and (skew robustness vs power).
+
+Deliverables (End-of-Semester)
+GitHub repository with full MATLAB/Python code, README, and reproducibility scripts.
+Figures:
+Skew-Power Pareto (H-tree vs Mesh vs Hybrid vs Region-Adaptive Hybrid)
+Skew heatmaps across die regions
+Robustness (p95/p99 skew) distributions
+Final report summarizing:
+Literature findings
+Modeling methodology
+Quantitative results and analysis
+Insights for future adaptive clock design
+
+Fit with Track B
+This project has emphasis on combining:
+Architectural modeling (clock-tree topology & optimization),
+Performance analysis (skew, latency, power),
+Algorithmic design (mesh-density optimization), and
+Reproducible simulation methodology.
+
 # Hybrid Clock Network Design: H-Tree Backbone with Region-Adaptive Local Meshes
 
 ## Overview
